@@ -4,14 +4,17 @@
 	import ArrowRightIcon from "@lucide/svelte/icons/arrow-right";
 	import BriefcaseIcon from "@lucide/svelte/icons/briefcase-business";
 	import GlobeIcon from "@lucide/svelte/icons/globe";
+	import LayoutDashboardIcon from "@lucide/svelte/icons/layout-dashboard";
 	import MapPinnedIcon from "@lucide/svelte/icons/map-pinned";
 	import MailIcon from "@lucide/svelte/icons/mail";
 	import MessageCircleIcon from "@lucide/svelte/icons/message-circle";
 	import MoonIcon from "@lucide/svelte/icons/moon";
 	import PhoneIcon from "@lucide/svelte/icons/phone";
+	import SmartphoneIcon from "@lucide/svelte/icons/smartphone";
 	import SparklesIcon from "@lucide/svelte/icons/sparkles";
 	import SunIcon from "@lucide/svelte/icons/sun-medium";
 	import UsersIcon from "@lucide/svelte/icons/users";
+	import WrenchIcon from "@lucide/svelte/icons/wrench";
 	import { onMount } from "svelte";
 	import { fly } from "svelte/transition";
 	import SectionHeader from "$lib/components/section-header.svelte";
@@ -24,6 +27,7 @@
 		heroCloud,
 		metrics,
 		personalTags,
+		services,
 		skillGroups,
 		tickerItems,
 		timeline,
@@ -100,6 +104,7 @@
 				</div>
 
 				<nav class="hidden items-center gap-5 text-sm font-medium lg:flex">
+					<a class="nav-link" href="#services">{t(ui.nav.services)}</a>
 					<a class="nav-link" href="#timeline">{t(ui.nav.timeline)}</a>
 					<a class="nav-link" href="#stack">{t(ui.nav.stack)}</a>
 					<div class="flex items-center gap-0.5">
@@ -273,6 +278,45 @@
 							</div>
 						</Card.Content>
 					</Card.Root>
+				{/each}
+			</div>
+		</div>
+	</section>
+
+	<section class="section-anchor section-space" id="services">
+		<div class="content-shell space-y-10">
+			<SectionHeader
+				eyebrow={t(ui.services.eyebrow)}
+				title={t(ui.services.title)}
+				intro={t(ui.services.intro)}
+			/>
+
+			<div class="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+				{#each services as service}
+					<div class="service-card">
+						<div class="service-card-icon">
+							{#if service.icon === "globe"}
+								<GlobeIcon class="size-6 text-primary" />
+							{:else if service.icon === "layout"}
+								<LayoutDashboardIcon class="size-6 text-primary" />
+							{:else if service.icon === "smartphone"}
+								<SmartphoneIcon class="size-6 text-primary" />
+							{:else}
+								<WrenchIcon class="size-6 text-primary" />
+							{/if}
+						</div>
+						<h3 class="font-display text-xl font-semibold leading-snug">
+							{t(service.title)}
+						</h3>
+						<p class="text-muted-foreground text-sm leading-relaxed">
+							{t(service.description)}
+						</p>
+						<div class="mt-auto flex flex-wrap gap-2 pt-2">
+							{#each service.tags as tag}
+								<span class="service-tag">{tag}</span>
+							{/each}
+						</div>
+					</div>
 				{/each}
 			</div>
 		</div>

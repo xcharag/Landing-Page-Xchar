@@ -338,6 +338,26 @@
 	animation: chip-float-a 9s ease-in-out infinite;
 }
 
+.service-card {
+	@apply border-border/80 bg-card/72 flex flex-col gap-4 rounded-[1.8rem] border p-6 backdrop-blur-xl transition-all duration-200;
+	box-shadow: 0 8px 32px rgb(2 12 27 / 0.10);
+}
+
+.service-card:hover {
+	@apply border-primary/35 bg-card/90;
+	box-shadow: 0 14px 44px rgb(56 189 248 / 0.13);
+	transform: translateY(-3px);
+}
+
+.service-card-icon {
+	@apply bg-primary/10 border-primary/20 grid size-12 place-items-center rounded-2xl border;
+}
+
+.service-tag {
+	@apply bg-background/65 border-border/70 rounded-full border px-2.5 py-0.5 text-xs font-medium text-foreground/70;
+}
+
+
 .float-b {
 	animation: chip-float-b 10s ease-in-out infinite;
 }

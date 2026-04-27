@@ -42,6 +42,7 @@ export const ui = {
 		en: "Oscar Aguilar, developer based in Santa Cruz, Bolivia. C#, Blazor, Web API, Svelte, Python, and Angular.",
 	},
 	nav: {
+		services: { es: "Servicios", en: "Services" },
 		timeline: { es: "Trayectoria", en: "Timeline" },
 		stack: { es: "Stack", en: "Stack" },
 		contact: { es: "Contacto", en: "Contact" },
@@ -112,6 +113,20 @@ export const ui = {
 		title: {
 			es: "Poca explicación, señales claras.",
 			en: "Less explanation, clearer signals.",
+		},
+	},
+	services: {
+		eyebrow: {
+			es: "Servicios",
+			en: "Services",
+		},
+		title: {
+			es: "Lo que puedo construir para vos.",
+			en: "What I can build for you.",
+		},
+		intro: {
+			es: "Trabajo como independiente. Sin agencia de por medio — hablás directamente conmigo.",
+			en: "I work independently. No agency in between — you talk directly with me.",
 		},
 	},
 	timeline: {
@@ -194,6 +209,52 @@ export const ui = {
 		promotion: { es: "Ascenso", en: "Promotion" },
 	},
 };
+
+export type Service = {
+	icon: "globe" | "layout" | "smartphone" | "wrench";
+	title: Localized;
+	description: Localized;
+	tags: string[];
+};
+
+export const services: Service[] = [
+	{
+		icon: "globe",
+		title: { es: "Páginas web", en: "Web Pages" },
+		description: {
+			es: "Sitios rápidos, bien posicionados y fáciles de actualizar. Desde landing pages hasta portales corporativos.",
+			en: "Fast, well-ranked sites that are easy to maintain. From landing pages to corporate portals.",
+		},
+		tags: ["Svelte", "Tailwind", "SEO", "CMS"],
+	},
+	{
+		icon: "layout",
+		title: { es: "Aplicaciones web", en: "Web Apps" },
+		description: {
+			es: "Sistemas internos, dashboards y plataformas SaaS con lógica real, no demos. Integración con APIs y ERPs.",
+			en: "Internal tools, dashboards, and SaaS platforms with real business logic. API and ERP integration.",
+		},
+		tags: ["C#", "Web API", "Svelte", "Angular"],
+	},
+	{
+		icon: "smartphone",
+		title: { es: "Aplicaciones móviles", en: "Mobile Apps" },
+		description: {
+			es: "Apps para Android e iOS con .NET MAUI o Flutter. Conectadas al mismo backend de tu sistema web.",
+			en: "Android and iOS apps with .NET MAUI or Flutter, connected to your existing web backend.",
+		},
+		tags: [".NET MAUI", "Flutter", "Android", "iOS"],
+	},
+	{
+		icon: "wrench",
+		title: { es: "Mantenimiento web", en: "Web Maintenance" },
+		description: {
+			es: "Actualizaciones, corrección de bugs, mejoras de rendimiento y soporte continuo para tu plataforma actual.",
+			en: "Updates, bug fixes, performance improvements, and ongoing support for your current platform.",
+		},
+		tags: ["Soporte", "Performance", "Bugs", "Uptime"],
+	},
+];
 
 export const metrics: Metric[] = [
 	{

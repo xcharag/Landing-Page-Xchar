@@ -203,6 +203,9 @@
 						<Button href="#stack" size="lg" variant="outline" class="bg-background/60">
 							{t(ui.hero.secondaryAction)}
 						</Button>
+						<Button href="#contact" size="lg" variant="outline" class="bg-background/60">
+							{locale === "es" ? "Contáctame" : "Contact me"}
+						</Button>
 					</div>
 
 					<div class="fade-up grid gap-3 sm:grid-cols-3" style="animation-delay: 180ms;">
@@ -318,6 +321,12 @@
 						</div>
 					</div>
 				{/each}
+			</div>
+			<div class="mt-10 flex justify-center">
+				<Button href="#contact" size="lg" class="shadow-soft-strong">
+					{locale === "es" ? "Contáctame" : "Contact me"}
+					<ArrowRightIcon class="size-4" />
+				</Button>
 			</div>
 		</div>
 	</section>

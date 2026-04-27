@@ -10,6 +10,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"start": "node build",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
@@ -20,7 +21,8 @@
 		"@fontsource-variable/space-grotesk": "^5.2.10",
 		"@internationalized/date": "^3.12.1",
 		"@lucide/svelte": "^1.8.0",
-		"@sveltejs/adapter-auto": "^7.0.1",
+		"@sveltejs/adapter-node": "^5.5.4",
+		"@sveltejs/adapter-node": "^5.5.4",
 		"@sveltejs/kit": "latest",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@tailwindcss/vite": "latest",
